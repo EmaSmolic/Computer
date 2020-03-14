@@ -7,5 +7,15 @@ public class ArithmeticLogicUnit {
 		
 	}
 
+	public void getOperandFromBus(Bus bus) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Data performOperation() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

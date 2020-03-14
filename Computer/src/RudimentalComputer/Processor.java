@@ -27,11 +27,25 @@ public class Processor implements Component{
 	public void performInstruction() {
 		fetch();
 		decode();
+		execute();
+	}
+
+	private void execute() {
+		 Data result = ALU.performOperation();
+		 B3.dataWires = Data.toBinary(result);
+		 dataMRegister = Data.toData(B3.dataWires);
+		 
+		 setSRFlags(result);
+		
+	}
+
+	private void setSRFlags(Data result) {
+		// TODO Auto-generated method stub
 		
 	}
 
 	private void decode() {
-		
+		CU.decode(this);
 		
 	}
 
@@ -50,4 +64,6 @@ public class Processor implements Component{
 		if (!Storeable.isInstruction(dataMRegister)) throw new Error("No instructions in memory.");
 		
 	}
+
+
 }

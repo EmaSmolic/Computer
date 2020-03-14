@@ -23,7 +23,7 @@ public class Data implements Storeable {
 	}
 
 	@Override
-	public void interpret() {
+	public void decode() {
 		// TODO Auto-generated method stub
 		
 	}

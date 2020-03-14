@@ -3,6 +3,7 @@ package RudimentalComputer;
 public class Instruction implements Storeable{
 
 	public ALUOperation ALUOperation;
+	public int internalRegisterNumber;
 
 
 	public static void load(Processor cpu, Memory mem, Bus bus) {
@@ -34,12 +35,12 @@ public class Instruction implements Storeable{
 
 
 	@Override
-	public void interpret() { //MUST SET ALUOPERATION
+	public void decode() { //MUST SET ALUOPERATION
 		// TODO Auto-generated method stub
 		
 	}
 
-	public boolean operandFromMemory() {
+	public boolean operand2FromMemory() {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -48,4 +49,9 @@ public class Instruction implements Storeable{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	public boolean operand2FromRegister () {
+		return false;
+	}
+
 }

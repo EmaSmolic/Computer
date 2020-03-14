@@ -2,7 +2,7 @@ package RudimentalComputer;
 
 public interface Storeable {
 	
-	public void interpret();
+	public void decode();
 
 
 	public static Storeable toStoreable(Boolean[] dataWires) {
