@@ -19,4 +19,12 @@ public interface Storeable {
 		return null;
 	}
 
+
+	public static int toInteger(Storeable dataMRegister) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
 }

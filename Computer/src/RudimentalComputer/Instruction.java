@@ -4,6 +4,14 @@ public class Instruction implements Storeable{
 
 	public ALUOperation ALUOperation;
 	public int internalRegisterNumber;
+	public int branchAdress;
+	public boolean isConditionalBranch;
+	public boolean isUnconditionalBranch;
+	public boolean branchConditionTrue;
+	public boolean isProcedureCall;
+	public int procedureCallAdress;
+	
+	public InstructionType type;
 
 
 	public static void load(Processor cpu, Memory mem, Bus bus) {
@@ -32,10 +40,14 @@ public class Instruction implements Storeable{
 		mem.memory[mem.adressRegister] = bus.dataWires;
 		
 	}
+	
+//	public static void unconditionalBranch(Processor cpu, Memory mem, Bus bus) {
+//		
+//	}
 
 
 	@Override
-	public void decode() { //MUST SET ALUOPERATION
+	public void decode() { //MUST SET FIELDS
 		// TODO Auto-generated method stub
 		
 	}

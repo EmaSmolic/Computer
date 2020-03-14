@@ -1,6 +1,7 @@
 package RudimentalComputer;
 
 public class ArithmeticLogicUnit {
+	public ALUOperation operation;
 
 	public void setOperation(ALUOperation operation) {
 		// TODO Auto-generated method stub

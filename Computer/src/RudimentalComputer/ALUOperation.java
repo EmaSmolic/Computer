@@ -1,6 +1,5 @@
 package RudimentalComputer;
 
-public class ALUOperation {
-	
+public enum ALUOperation {
 
 }

@@ -28,6 +28,16 @@ public class Data implements Storeable {
 		
 	}
 
+	public static Data toData(int programCounter) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static int toInteger(Storeable dataMRegister) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 
 
 

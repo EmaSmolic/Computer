@@ -1,0 +1,1 @@
+- implement all intra-CPU data transactions using internal buses (NO programCounter = stackPointer etc.)

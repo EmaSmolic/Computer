@@ -21,14 +21,46 @@ public class Processor implements Component{
 	public Computer computer;
 	
 	public void turnOn() {
-		programCounter = -1;
+		programCounter = 15;
+		stackPointer = 0;
 	}
 	
 	public void performInstruction() {
 		fetch();
 		decode();
-		execute();
+		
+		switch (instructionRegister.type) { 
+			case BRANCH: 
+				if (instructionRegister.isUnconditionalBranch ||
+				(instructionRegister.isConditionalBranch && instructionRegister.branchConditionTrue)) {
+					adressMRegister = instructionRegister.branchAdress;
+				}
+				break;
+		
+			case PROCEDURE_CALL: 
+				dataMRegister = Data.toData(programCounter);
+				adressMRegister = stackPointer;
+				Instruction.load(this, computer.memory, computer.bus);
+				
+				stackPointer++;
+				
+				programCounter = instructionRegister.procedureCallAdress;
+				break;
+		
+		
+			case PROCEDURE_RETURN:
+				stackPointer++;
+				adressMRegister = stackPointer;
+				Instruction.load(this, computer.memory, computer.bus);
+				
+				programCounter = Storeable.toInteger(dataMRegister);
+				
+				
+			default:
+				execute();
+		}
 	}
+	
 
 	private void execute() {
 		 Data result = ALU.performOperation();
