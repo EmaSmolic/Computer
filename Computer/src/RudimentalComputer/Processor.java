@@ -21,7 +21,7 @@ public class Processor implements Component{
 	public Computer computer;
 	
 	public void turnOn() {
-		programCounter = 15;
+		programCounter = 16;
 		stackPointer = 0;
 	}
 	
@@ -49,7 +49,7 @@ public class Processor implements Component{
 		
 		
 			case PROCEDURE_RETURN:
-				stackPointer++;
+				stackPointer--;
 				adressMRegister = stackPointer;
 				Instruction.load(this, computer.memory, computer.bus);
 				
@@ -82,8 +82,6 @@ public class Processor implements Component{
 	}
 
 	public void fetch() {	
-		nextInstructionInPC();
-		
 		instructionRegister = (Instruction) dataMRegister;		
 	}
 

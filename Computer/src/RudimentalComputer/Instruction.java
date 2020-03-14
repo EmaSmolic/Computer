@@ -3,12 +3,14 @@ package RudimentalComputer;
 public class Instruction implements Storeable{
 
 	public ALUOperation ALUOperation;
+	
 	public int internalRegisterNumber;
+	
 	public int branchAdress;
 	public boolean isConditionalBranch;
 	public boolean isUnconditionalBranch;
 	public boolean branchConditionTrue;
-	public boolean isProcedureCall;
+	
 	public int procedureCallAdress;
 	
 	public InstructionType type;
